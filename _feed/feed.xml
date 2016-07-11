@@ -1,0 +1,13 @@
+---
+layout: compress
+permalink: /feed.xml
+---
+
+{% include feed/head.xml %}
+{% include feed/author.xml %}
+
+   {% for post in site.posts limit:10 %}
+   {% include feed/entry.xml %}
+   {% endfor %}
+
+</feed>
