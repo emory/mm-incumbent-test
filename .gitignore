@@ -8,3 +8,7 @@ _site
 codekit-config.json
 node_modules
 npm-debug.log*
+images
+_jekyll_s3.yml
+s3_website.yml
+.Ulysses-Group.plist

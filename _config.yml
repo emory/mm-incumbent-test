@@ -7,16 +7,17 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+title                    : "incumbent"
+title_separator          : "⚯"
+name                     : "Emory Lundberg"
+description              : "An indelible reminder of the steel I lack."
+url                      : https://incumbent.org # the base hostname & protocol 
+                           # for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-gh_repo                  :
-teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-# breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+gh_repo                  : mm-incumbent-test
+teaser                   : default-teaser.png # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+breadcrumbs              : true # true, false (default)
+words_per_minute         : 220
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", custom"
   disqus:
@@ -31,15 +32,15 @@ comments:
 
 # SEO Related
 google_site_verification :
-bing_site_verification   :
+bing_site_verification   : 7E018432D3498C29669726D9AB77C164
 alexa_site_verification  :
 yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : incumbent
 facebook:
-  username               :
+  username               : incumbent
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
@@ -47,14 +48,14 @@ og_image                 : # Open Graph/Twitter default site image
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  name                   : KVET.CH heavy industries # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : google # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : UA-19313033-5
 
 # Google AdSense
 google_ad_client         :
@@ -63,30 +64,30 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Emory"
   avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
-  uri              :
-  bitbucket        :
+  bio              : "A Renaissance man eagerly awaiting the next Renaissance."
+  location         : "Iowa, USA"
+  email            : emory@hellyeah.com
+  uri              : https://incumbent.org
+  bitbucket        : 
   codepen          :
   dribbble         :
-  flickr           :
-  facebook         :
+  flickr           : sempai
+  facebook         : incumbent
   foursquare       :
-  github           :
-  google_plus      :
-  keybase          :
-  instagram        :
+  github           : emory
+  google_plus      : +EmoryL
+  keybase          : emory
+  instagram        : incumbent
   lastfm           :
   linkedin         :
-  pinterest        :
+  pinterest        : incumbent
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          :
+  steam            : TobiasIsQueenMary
+  tumblr           : emory
+  twitter          : incumbent
   vine             :
   weibo            :
   xing             :
@@ -97,6 +98,8 @@ author:
 include:
   - .htaccess
   - _pages
+  - _feed
+  - _linkdump
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -104,6 +107,7 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
+  - .Ulysses-Group.plist
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
@@ -120,12 +124,35 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - _eg
+  - Capfile
+  - config
+  - Snips.txt
+  - todo.taskpaper
+  - log
+  - Rakefile
+  - tmp
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - Gemfile
+  - LICENSE
+  - README
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - .jekyll-assets-cache
+  - .asset-cache
+  - .sass-cache
+  - .bundle
+  - s3_website.yml
+  - _jekyll_s3.yml
+  
 keep_files:
+  - images
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
 
 # Conversion
 markdown: kramdown
@@ -133,7 +160,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -148,11 +174,79 @@ kramdown:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /post/:title/index.html
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Plugin: jekyll-assets
+
+assets:
+  sources:
+    - assets/js
+    - assets/_scss
+  autoprefixer:
+    browsers: ["last 2 versions","> 5%","IE 9"]
+
+# Collections
+
+collections:
+# faqs:
+#   output: true
+#   permalink: /:collection/:path/
+#   title: FAQs
+  linkdump:
+   output: true
+   permalink: /:collection/:path/
+  resources:
+    output: true
+    permalink: /:collection/:path/
+    title: Resources
+# certs:
+#   output: true
+#   permalink: /:collection/:path/
+#   title: Certs and PKI
+  coolkids:
+    output: true
+    permalink: /:collection/:path/
+    title: Field Guide for Parents of Cool Kids
+    layout: article
+  components:
+    output: false
+  colors:
+    output: false
+
+defaults:
+
+  # Blog Articles
+  - scope:
+      path: _posts/articles
+      type: posts
+    values:
+      layout: article
+      category: articles
+
+  # Work
+  - scope:
+      path: _posts/work
+      type: posts
+    values:
+      layout: article
+      category: work
+
+  # FAQs
+  - scope:
+      path: _faqs
+      type: faqs
+    values:
+      layout: article
+
+  # Pages
+  - scope:
+      path: _pages
+      type: pages
+    values:
+      layout: article
 
 # Plugins
 gems:
@@ -160,6 +254,10 @@ gems:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-archives
+  - jekyll-assets
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
   - jemoji
 
 # mimic GitHub Pages with --safe
@@ -184,21 +282,56 @@ whitelist:
 category_archive:
   type: liquid
   path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
+# Plugin: jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag: tag_index
+  permalinks:
+    tag: /tag/:name/
+
+# Plugin: jekyll-picture-tag
+
+picture:
+  source: "images/_originals"
+  output: "images"
+  markup: "picture"
+  presets:
+    default:
+      ppi: [1]
+      source_720:
+        media: "(min-width: 1200px)"
+        width: "720"
+      source_670:
+        media: "(min-width: 768px)"
+        width: "670"
+      source_540:
+        media: "(min-width: 600px)"
+        width: "540"
+      source_default:
+        width: "320"
+    hero:
+      attr:
+        class: "page__hero-image"
+        itemprop: "image"
+      ppi: [1]
+      source_1600:
+        media: "(min-width: 1600px)"
+        width: "1600"
+      source_1024:
+        media: "(min-width: 1024px)"
+        width: "1024"
+      source_768:
+        media: "(min-width: 768px)"
+        width: "768"
+      source_600:
+        media: "(min-width: 600px)"
+        width: "600"
+      source_default:
+        width: "320"
 
 # HTML Compression
 # - http://jch.penibelst.de/

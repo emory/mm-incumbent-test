@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "Sample Navigation Link"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+  - title: "Coolkids"
+    url: https://incumbent.org/coolkids/
 
-  - title: "Sample Navigation Link 2"
-    url: /
+  - title: "Articles"
+    url: https://incumbent.org/articles
